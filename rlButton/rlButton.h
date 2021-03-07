@@ -24,7 +24,7 @@ SOFTWARE.
 Developed By Okistuff
 Requires Raylib
 
-This is a single-header library that handles button collison and some basic rendering
+This is a single-header library that handles button collision and some basic rendering
 
 Example: https://github.com/OkiStuff/rl_singleHeaders/tree/main/rlButton
 */
@@ -38,7 +38,7 @@ Example: https://github.com/OkiStuff/rl_singleHeaders/tree/main/rlButton
 // Defining
 
 
-// Mouse Collison
+// Mouse collison
 typedef Rectangle rlMouseCollider;
 
 // Button Object
@@ -64,7 +64,7 @@ else, returns false
 bool IsButtonHovered(rlButton button, rlMouseCollider collider);
 /* Renders the passed rlButton with text,
 only use this if you arent going to be using the button with a sprite or rendering it a different way*/
-void DrawButton(rlButton button, int posX, int posY, int fontSize, Color tint);
+void DrawButton(rlButton button, int fontSize, Color tint);
 // Render the collison boxes of passed rlButton
 void rlButtonDrawDebug(rlButton button);
 // Render the collison boxes of passed rlMouseCollider
@@ -76,8 +76,17 @@ rlMouseCollider NewMouseCollider(int width, int height)
 {
     rlMouseCollider temp;
     // Initalize the box that is rendered if rlButtonDebugMode is enabled
-    if (width == 0 && height == 0) temp = { 0, 0, 60, 60};
-    else temp = {0, 0, width, height};;
+    if (width == 0 && height == 0) 
+    {
+        temp.x,temp.y = 0;
+        temp.width,temp.height = 60;
+    }
+    else 
+    {
+        temp.x,temp.y = 0;
+        temp.width = width;
+        temp.height = height;
+    }
     return temp;
 }
 
@@ -100,9 +109,9 @@ bool IsButtonHovered(rlButton button, rlMouseCollider collider)
     return false;
 }
 
-void DrawButton(rlButton button, int posX, int posY, int fontSize, Color tint)
+void DrawButton(rlButton button, int fontSize, Color tint)
 {
-    DrawText(button.buttonText, posX, posY, fontSize, tint);
+    DrawText(button.buttonText, button.box.x, button.box.y, fontSize, tint);
 }
 
 void rlButtonDrawDebug(rlButton button)
