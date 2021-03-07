@@ -22,7 +22,7 @@ int main(void)
         UpdateMouseCollider(mouse);
         if (IsButtonPressed(button, mouse)) buttonPressed = true;
         else if (IsButtonHovered(button, mouse)) buttonHovered = true;
-        else buttonPressed, ButtonHovered = false;
+        else buttonPressed, buttonHovered = false;
         
         if (IsKeyDown(KEY_ENTER)) debugMode = !debugMode;
         
