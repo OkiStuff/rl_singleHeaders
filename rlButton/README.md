@@ -28,7 +28,7 @@ int main(void)
         
         BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawButton(button);
+            DrawButton(button, 12, BLACK);
             if (buttonPressed && !buttonHovered) DrawText("pressed", 800/2, 800/2, 24, RED);
             if (!buttonPressed && buttonHovered) DrawText("hovered", 800/2, 800/2, 24, RED);
             if (debugMode) 
@@ -41,6 +41,7 @@ int main(void)
      CloseWindow();
      return 0;
 }
+     
      
      
         
