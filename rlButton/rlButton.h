@@ -25,6 +25,8 @@ Developed By Okistuff
 Requires Raylib
 
 This is a single-header library that handles button collison and some basic rendering
+
+Example: https://github.com/OkiStuff/rl_singleHeaders/tree/main/rlButton
 */
 #pragma once
 #include "raylib.h" // Rendering Framework
@@ -62,7 +64,7 @@ else, returns false
 bool IsButtonHovered(rlButton button, rlMouseCollider collider);
 /* Renders the passed rlButton with text,
 only use this if you arent going to be using the button with a sprite or rendering it a different way*/
-void DrawButton(rlButton button);
+void DrawButton(rlButton button, int posX, int posY, int fontSize, Color tint);
 // Render the collison boxes of passed rlButton
 void rlButtonDrawDebug(rlButton button);
 // Render the collison boxes of passed rlMouseCollider
