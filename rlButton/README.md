@@ -14,7 +14,7 @@ int main(void)
       (Rectangle){50,50,50,50},
       "Click Me :D"};
     rlMouseCollider mouse = NewMouseCollider(0,0);
-    bool buttonPressed, buttonHovered, debugMode;
+    bool buttonPressed, buttonHovered, debugMode = false;
     
     SetTargetFPS(60);
     if (!WindowShouldClose())
@@ -41,6 +41,7 @@ int main(void)
      CloseWindow();
      return 0;
 }
+     
      
      
      
