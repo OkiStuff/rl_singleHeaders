@@ -16,6 +16,7 @@ int main(void)
     rlMouseCollider mouse = NewMouseCollider(0,0);
     bool buttonPressed, buttonHovered, debugMode;
     
+    SetTargetFPS(60);
     if (!WindowShouldClose())
     {
         UpdateMouseCollider(mouse);
@@ -26,6 +27,7 @@ int main(void)
         if (IsKeyDown(KEY_ENTER)) debugMode = !debugMode;
         
         BeginDrawing();
+            ClearBackground(RAYWHITE);
             DrawButton(button);
             if (buttonPressed && !buttonHovered) DrawText("pressed", 800/2, 800/2, 24, RED);
             if (!buttonPressed && buttonHovered) DrawText("hovered", 800/2, 800/2, 24, RED);
