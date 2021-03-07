@@ -26,6 +26,7 @@ int main(void)
         if (IsKeyDown(KEY_ENTER)) debugMode = !debugMode;
         
         BeginDrawing();
+            DrawButton(button);
             if (buttonPressed && !buttonHovered) DrawText("pressed", 800/2, 800/2, 24, RED);
             if (!buttonPressed && buttonHovered) DrawText("hovered", 800/2, 800/2, 24, RED);
             if (debugMode) 
