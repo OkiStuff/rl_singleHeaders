@@ -53,7 +53,7 @@ set width & height to 0 or RL_BUTTON_MOUSE_COLLIDER_SIZE_DEFAULT if you want to 
 */
 rlMouseCollider NewMouseCollider(int width, int height);
 // Updates the mouse collider
-void UpdateMouseCollider(rlMouseCollider collider);
+rlMouseCollider UpdateMouseCollider(rlMouseCollider collider);
 /* Returns true if the passed rlButton has been pressed by the passed rlMouseCollider
 else, returns false
 */
@@ -78,22 +78,26 @@ rlMouseCollider NewMouseCollider(int width, int height)
     // Initalize the box that is rendered if rlButtonDebugMode is enabled
     if (width == 0 && height == 0) 
     {
-        temp.x,temp.y = 0;
-        temp.width,temp.height = 60;
+        temp.x = 0;
+        temp.y = 0;
+        temp.width = 60;
+        temp.height = 60;
     }
     else 
     {
-        temp.x,temp.y = 0;
+        temp.x = 0;
+        temp.y = 0;
         temp.width = width;
         temp.height = height;
     }
     return temp;
 }
 
-void UpdateMouseCollider(rlMouseCollider collider)
+rlMouseCollider UpdateMouseCollider(rlMouseCollider collider)
 {
     collider.x = GetMouseX() - collider.width/2;
     collider.y = GetMouseY() - collider.height/2;
+    return collider;
 }
 
 bool IsButtonPressed(rlButton button, rlMouseCollider collider)
