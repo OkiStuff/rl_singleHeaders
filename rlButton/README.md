@@ -2,11 +2,15 @@
 rlButton is a single-header library that manages button collison and some basic rendering of the buttons
 
 How to install:
+
 `wget https://raw.githubusercontent.com/OkiStuff/rl_singleHeaders/main/rlButton/rlButton.h`
+
 or
+
 `git clone https://github.com/OkiStuff/rl_singleHeaders.git`
 
 an Example is also avaliable for install with
+
 `wget https://raw.githubusercontent.com/OkiStuff/rl_singleHeaders/main/rlButton/rlButton.h`
 
 # Example
